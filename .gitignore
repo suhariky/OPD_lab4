@@ -1,0 +1,76 @@
+# =====================================================================
+# .gitignore для проекта Unreal Engine 5 (OPD_lab4)
+# Основа: шаблон github/gitignore UnrealEngine.gitignore
+# =====================================================================
+
+# --- Служебные папки движка (генерируются автоматически) -------------
+# Без ведущего "/" — ловят и корень проекта, и Plugins/<Имя>/...
+Binaries/
+Intermediate/
+Saved/
+DerivedDataCache/
+
+# --- Собранная игра (ЛР4, п. 6.2) — в репозиторий не кладём, только в Releases
+Builds/
+*.zip
+
+# --- IDE и файлы проекта, которые генерирует движок ------------------
+.vs/
+.vscode/
+.idea/
+*.sln
+*.slnx
+*.suo
+*.sdf
+*.opensdf
+*.VC.db
+*.VC.opendb
+*.code-workspace
+*.xcodeproj
+*.xcworkspace
+.vsconfig
+
+# --- Скомпилированные объекты и библиотеки (на случай C++) -----------
+*.slo
+*.lo
+*.o
+*.obj
+*.gch
+*.pch
+*.so
+*.dylib
+*.dll
+*.mod
+*.lai
+*.la
+*.a
+*.lib
+
+# --- Исполняемые файлы ------------------------------------------------
+*.exe
+*.out
+*.app
+*.ipa
+
+# --- Исходники арта вне движка ---------------------------------------
+SourceArt/**/*.png
+SourceArt/**/*.tga
+
+# --- Папка Build/ движка: игнорируем, кроме иконок и PakBlacklist ----
+Build/*
+!Build/*/
+Build/*/**
+!Build/*/PakBlacklist*.txt
+!Build/**/*.ico
+
+# --- Built data карт --------------------------------------------------
+# В шаблоне "*_BuiltData.uasset" игнорируется. Мы его НЕ игнорируем:
+# в шаблоне FirstPersonHorrorKit запечённое освещение FirstPersonMap
+# (FirstPersonMap_BuiltData.uasset) идёт в комплекте, и без него у команды
+# уровень откроется с "Lighting needs to be rebuilt". Файл уходит в LFS.
+# *_BuiltData.uasset
+
+# --- Мусор ОС ---------------------------------------------------------
+Thumbs.db
+desktop.ini
+.DS_Store
