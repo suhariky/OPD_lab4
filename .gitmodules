@@ -1,0 +1,3 @@
+[submodule "Content/SharedAssets"]
+	path = Content/SharedAssets
+	url = https://github.com/Gil-1/UERenderTools.git
